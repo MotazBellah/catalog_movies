@@ -318,7 +318,6 @@ def newItem(catalog_name):
 @app.route('/catalogs/<catalog_name>/<item_name>/edit',
            methods=['GET', 'POST'])
 def editItem(catalog_name, item_name):
-    print(login_session['username'])
     if 'username' not in login_session:
         return redirect('/login')
     catalogs = session.query(Catalog).all()
